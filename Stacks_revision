@@ -1,0 +1,74 @@
+#include<iostream>
+using namespace std ;
+class stack {
+    public:
+    int size;
+    int top;
+    int *arr;
+    stack(int size){
+     arr=new int[size];
+     this->size=size;
+    this->top=-1;   
+    }
+void Push(int data){
+    if(size-top>1){
+        top++;
+        arr[top]=data;
+    }
+    else{
+        cout<<"Stack overflow"<<endl;
+    }
+}
+void Pop(){
+    if(top==-1){
+      cout<<"Stack underflow"<<endl;  
+    }
+    else{
+        top--;
+    }
+}
+int Top(){
+    if(top==-1){
+        cout<<"Top not Present"<<endl;
+    }
+    else{
+        return arr[top];
+    }
+ }
+bool isEmpty(){
+    if(top==-1){
+       return true;
+    }
+    else{
+       return false;
+    }
+}
+    int Size(){
+        return top+1;
+    }
+    
+
+};
+int main(){
+stack s(10);
+s.Push(20);
+s.Push(30);
+s.Push(40);
+s.Push(50);
+s.Push(60);
+s.Push(10);
+// s.Pop();
+// s.Pop();
+// s.Pop();
+// s.Pop();
+// s.Pop();
+// s.Pop();
+// s.Pop();
+// cout<<"Size Of:" <<s.Size()<<endl;
+// cout<<"Top Of:" <<s.Top()<<endl;
+// while(!s.isEmpty()){
+//     cout<<s.Top()<<" ";
+//     s.Pop();
+// }
+
+}
